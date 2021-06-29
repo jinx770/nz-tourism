@@ -11,6 +11,13 @@
   }
 }
 
+.info-header {
+  position:absolute;
+  top:170px;
+  width:230px;
+}
+
+
 
 #cancel {
     position: absolute;
@@ -58,7 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 
@@ -96,7 +103,7 @@
 
 /* .gradient-box {
     width:100%;
-    padding:10px; 
+    padding:10px;
     top:0;
     bottom:0;
     height:100%;
@@ -197,7 +204,7 @@
   .navbar-toggle {
     display: none;
   }
-  
+
   .logo:hover,
   .nav-links:hover {
       transition: .6s;

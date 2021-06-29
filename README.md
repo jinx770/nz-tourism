@@ -1,23 +1,23 @@
-# Overview 
-Tourism New Zealand needed a new application/interface that  would allow a user who’s looking to stay places for short periods of time to find suitable accommodation for the user. 
-I created a web-based application that can display accommodation options to the user relevant to the information submitted. 
+# Overview
+Tourism New Zealand needed a new application/interface that  would allow a user who’s looking to stay places for short periods of time to find suitable accommodation for the user.
+I created a web-based application that can display accommodation options to the user relevant to the information submitted.
 
 
 ## Resources
 - Skeleton Framework - http://getskeleton.com/
- Skeleton is the backbone of project as it serves as a basic but smaller framework. 
+ Skeleton is the backbone of project as it serves as a basic but smaller framework.
 
 - Unsplash API - https://unsplash.com/developers  
-I used the unsplash api to generate images with queries relative to regions selected. 
+I used the unsplash api to generate images with queries relative to regions selected.
 
 - Moment JS - https://momentjs.com/
 Moment JS is a small js library used for collected time, I used it to collect the date for form validatdion.
 
 ## Validation
-Validation for the code has been completed, there are no problems within the JavaScript code, as for html and css both have been validated and are correct. 
-  
+Validation for the code has been completed, there are no problems within the JavaScript code, as for html and css both have been validated and are correct. Although the JS may not error, after running a JS Lint there were a few errors I was unable to resolve, such as 80 character errors when I'm unable to shorten it. 
+
 ## Style Guide
-I used and referenced airbnb styles guide (https://github.com/airbnb/javascript) throughout my coding. Airbnb revolves around efficient programming, knowing how to optimise code while keeping functionality. 
+I used and referenced airbnb styles guide (https://github.com/airbnb/javascript) throughout my coding. Airbnb revolves around efficient programming, knowing how to optimise code while keeping functionality.
 
 
 ```js
@@ -63,14 +63,14 @@ let obj = {
 ```
 - Using property value shorthands.
 
-And other examples found on their documentation guide. 
+And other examples found on their documentation guide.
 https://github.com/airbnb/javascript
 
 ## Usage
 The application uses localStorage to store the relevant information collected from each process/steps through the website. Simply enter correct and appropriate inputs and proceed through the steps.  
 ```js
 searchButton.addEventListener('click', () => {
-    // Pass inputs to a function 
+    // Pass inputs to a function
 });
 ```
 
@@ -78,5 +78,5 @@ searchButton.addEventListener('click', () => {
 N/A
 
 ## Disclaimer
-Validation for the code has been completed, there are no errors or data leakage. 
-Given the opportunity I would complete the edit bookings page as it is not done. 
+Validation for the code has been completed, there are no errors or data leakage.
+Given the opportunity I would complete the edit bookings page as it is not done.
