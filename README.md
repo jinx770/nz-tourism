@@ -2,15 +2,15 @@
 Tourism New Zealand needed a new application/interface that  would allow a user who’s looking to stay places for short periods of time to find suitable accommodation for the user.
 I created a web-based application that can display accommodation options to the user relevant to the information submitted.
 
-##File handler
-Files are sorted in folders. Each html page has its own javascript file according to its name:
-index.html = home.js
-create.html = formHandler.js
-edit.html = edit.js
-results.html = resultHandler.js
+## File handler
+Files are sorted in folders. Each html page has its own javascript file according to its name:  
+index.html = home.js  
+create.html = formHandler.js  
+edit.html = edit.js  
+results.html = resultHandler.js  
 accommodation.html = selectedAccommodation.js
 
-##What to expect
+## What to expect
 Starting off at the home page you are able to navigate the burger menu, you do need to go through the process of creating a booking via create or book now buttons to access edit booking else it'd cause an error. Once you get to the form you are able to enter reasonable inputs before clicking search. The application will now take you to another site with the data you entered earlier using localStorage. The page will show you relevant results based on your inputs, if there are none you've entered something incorrectly. Clicking on one of the results will take you to another page, saving what you clicked on via localStorage once again. You are able to select what meal package you want as well as book. On the page you can see the total cost for how many nights you selected, the people count and what sort of house it is. Booking it will allow you to visit Edit bookings where you can cancel or update the information.
 
 
