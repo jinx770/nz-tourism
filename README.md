@@ -27,7 +27,7 @@ Moment JS is a small JS library used for collected time, I used it to collect th
 ## Style Guide
 I used and referenced airbnb styles guide (https://github.com/airbnb/javascript) throughout my coding. Airbnb revolves around efficient programming, knowing how to optimize code while keeping functionality.
 
-
+- Complex types throughout the code, not having hard values.
 ```js
 let foo = [1, 2];
 let bar = foo;
@@ -36,11 +36,9 @@ bar[0] = 9;
 
 console.log(foo[0], bar[0]); // => 9, 9
 ```
-- Complex types throughout the code, not having hard values.
 
-
+- Replacing declarations with let or const over var, to avoid reassigning references.
 ```js
-
 // bad
 var count = 1;
 if (true) {
@@ -53,9 +51,8 @@ if (true) {
   count += 1;
 }
 ```
-- Replacing declarations with let or const over var, to avoid reassigning references.
 
-
+- Using property value shorthands.
 ```js
 let lukeSkywalker = 'Luke Skywalker';
 
@@ -69,22 +66,17 @@ let obj = {
   lukeSkywalker,
 };
 ```
-- Using property value shorthands.
 
 And other examples found on their documentation guide.
 https://github.com/airbnb/javascript
 
-## Usage
-The application uses localStorage to store the relevant information collected from each process/steps through the website. Simply enter correct and appropriate inputs and proceed through the steps.  
-```js
-searchButton.addEventListener('click', () => {
-    // Pass inputs to a function
-});
-```
+
+
+
 
 ## Known Issues
-N/A
+Pressing edit booking before actually booking something will error.
 
 ## Disclaimer
-Validation for the code has been completed, there are no errors or data leakage.
+Validation for the code has been completed, there are no natural errors.
 Given the opportunity I would complete the edit bookings page as it is not done.
