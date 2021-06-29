@@ -1,3 +1,4 @@
+// Equivalent of a function iife, just using a right arrow function.
 (() => {
 
 // HTML Declarations.
@@ -78,8 +79,8 @@
               wnd.close();
               setTimeout(function() {
                   window.location = 'edit.html';
-              }, 1000);
-        }, 2000);
+              }, 500);
+        }, 1000);
     };
 
 

@@ -1,3 +1,4 @@
+// Equivalent of a function iife, just using a right arrow function.
 (() => {
 
 // HTML Declarations.

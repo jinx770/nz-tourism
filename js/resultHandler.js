@@ -1,5 +1,10 @@
+// Equivalent of a function iife, just using a right arrow function.
 (() => {
 
+// Key for unsplash api
+  let key = "hs9FWRGtlarsUyiIWYJOSghxhZunpWhAQGx0pKHOo4Q"
+
+// Data object
     let accommodationData = {
         option1: {
             name: "Hotel",
@@ -88,6 +93,50 @@
                     cost: 10
                 }
             }
+        },
+        option5: {
+            name: "Hotel",
+            minPeople: 2,
+            maxPeople: 8,
+            cost: 110,
+            minDay: 1,
+            maxDay: 15,
+            mealPackage: {
+                firstMeal: {
+                    name: "Mixed",
+                    cost: 21
+                },
+                secondMeal: {
+                    name: "Vegan",
+                    cost: 13
+                },
+                thirdMeal: {
+                    name: "Keto",
+                    cost: 10
+                }
+            }
+        },
+        option6: {
+            name: "House",
+            minPeople: 1,
+            maxPeople: 11,
+            cost: 790,
+            minDay: 2,
+            maxDay: 15,
+            mealPackage: {
+                firstMeal: {
+                    name: "Mixed",
+                    cost: 21
+                },
+                secondMeal: {
+                    name: "Vegan",
+                    cost: 13
+                },
+                thirdMeal: {
+                    name: "Keto",
+                    cost: 10
+                }
+            }
         }
     };
 
@@ -103,7 +152,7 @@
 
     // Unsplash search API, used it to get a random image with house as a query.
     async function makeImageRequest(html) {
-        let response = await fetch(`https://api.unsplash.com/search/photos/?query=house&page=${ Math.round(Math.random()*1000) }&client_id=DEK9mR3xpfWkG3t3e2a7Cjegv_y5Pd0OQDcg-_G0j3U`);
+        let response = await fetch(`https://api.unsplash.com/search/photos/?query=house&page=${ Math.round(Math.random()*1000) }&client_id=${key}`);
         let data = await response.json();
         houseImage = data.results[0].urls.raw;
 
