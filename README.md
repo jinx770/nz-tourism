@@ -14,7 +14,7 @@ I used the unsplash api to generate images with queries relative to regions sele
 Moment JS is a small js library used for collected time, I used it to collect the date for form validatdion.
 
 ## Validation
-Validation for the code has been completed, there are no problems within the JavaScript code, as for html and css both have been validated and are correct. Although the JS may not error, after running a JS Lint there were a few errors I was unable to resolve, such as 80 character errors when I'm unable to shorten it. 
+Validation for the code has been completed, there are no problems within the JavaScript code, as for html and css both have been validated and are correct. Although the JS may not error, after running my code through a JS Linter there were a few errors I was unable to resolve, such as 80 character errors when I'm unable to shorten it. Used https://jshint.com/ as a reference. 
 
 ## Style Guide
 I used and referenced airbnb styles guide (https://github.com/airbnb/javascript) throughout my coding. Airbnb revolves around efficient programming, knowing how to optimise code while keeping functionality.

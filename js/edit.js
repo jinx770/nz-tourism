@@ -3,10 +3,6 @@
     // Document declarations.
     let mainNav = document.querySelector('#js-menu');
     let navBarToggle = document.querySelector('#js-navbar-toggle');
-    let searchButton = document.querySelector("#searchButton");
-
-    let htmlHeader = document.querySelectorAll(".header");
-    let htmlContent = document.querySelectorAll(".content");
 
     let accommodationData = localStorage.getItem("selectedAccommodation");
     let selectedAcc = JSON.parse(accommodationData);
@@ -24,31 +20,31 @@
         <p id="edit">Edit</p>
 
     </div>
-    `
+    `;
 
     let allBoxes = document.querySelectorAll(".box");
 
     for (let i = 0; i < allBoxes.length; i++) {
-        allBoxes[i].style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${selectedAcc.getImage}")`
-        allBoxes[i].style.backgroundSize = "100% 250px"
+        allBoxes[i].style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${selectedAcc.getImage}")`;
+        allBoxes[i].style.backgroundSize = "100% 250px";
 
         allBoxes[i].addEventListener('click', () => {
             window.location = 'accommodation.html';
-        })
+        });
     }
 
 // If user clicks cancel, delete the booking.
 // Clear localstorage to prevent it from reappearing if refreshed or selected again.
     document.querySelector("#cancel").addEventListener('click', () => {
-        document.querySelector("#deleteContainer").remove()
-        window.localStorage.clear()
-    })
+        document.querySelector("#deleteContainer").remove();
+        window.localStorage.clear();
+    });
 
 // Let user retake form to fix inputs.
 // Won't affect the booking page until user clicks "book" on another input
     document.querySelector("#edit").addEventListener('click', () => {
-        window.location = 'index.html';
-    })
+        window.location = 'create.html';
+    });
 
 // Navbar activator
     navBarToggle.addEventListener('click', () => {

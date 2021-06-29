@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Summative</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script ></script>
+
+</head>
+<body>
+
+
+  <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="index.html" class="logo"><img src="images/tnz-logo.png" style="width:100px;" alt="logo"></a>
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="create.html" class="nav-links">Create Booking</a>
+            </li>
+            <li>
+                <a href="edit.html" class="nav-links">Edit Booking</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container" style="padding-top:40px;">
+        <h3><b> Create Booking </b></h3>
+        <form id="form" method="POST">
+            <div class="row">
+            <div class="name transition">
+                <label>Your Name</label>
+                <input class="u-full-width" onkeypress="return /[a-z ]/i.test(event.key)" type="search" placeholder="John Doe" id="getName" required>
+            </div>
+
+            <div class="contact transition">
+                <label>Contact details</label>
+                <input class="u-full-width" type="email" placeholder="john.doe@gmail.com" id="getContact" required>
+            </div>
+
+            <div class="people transition">
+                <label>Amount of people</label>
+                <input class="u-full-width" min="1" max="10" type="number" placeholder="People" id="getPeople" required>
+            </div>
+
+            <div class="region transition">
+                <label>Region</label>
+                <select class="u-full-width" id="getRegion" required>
+                    <option value="" selected disabled hidden>Region</option>
+                    <option value="Auckland">Auckland</option>
+                    <option value="Waikato">Waikato</option>
+                    <option value="Bay of Plenty">Bay of Plenty</option>
+                    <option value="Taranaki">Taranaki</option>
+                    <option value="Gisborne">Gisborne</option>
+                    <option value="Hawkes Bay">Hawkes Bay</option>
+                    <option value="Manawatu">Manawatu</option>
+                    <option value="Napier">Napier</option>
+                    <option value="Wellington">Wellington</option>
+                </select>
+            </div>
+
+
+            <div class="date transition">
+                <label>Start Date</label>
+                <input class="u-full-width" type="date" id="getStart" required>
+            </div>
+
+            <div class="date transition">
+                <label>End Date</label>
+                <input class="u-full-width" type="date" id="getEnd" required>
+            </div>
+
+            </div>
+
+            <label class="example-send-yourself-copy transition">
+                <input type="checkbox" id="getCopy">
+                <span class="label-body">Send a copy via email</span>
+            </label>
+            <input class="button-primary transition" type="submit" id="searchButton" value="Search">
+        </form>
+    </div>
+
+
+    <script src="js/formHandler.js"></script>
+</body>
+</html>

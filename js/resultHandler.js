@@ -89,7 +89,7 @@
                 }
             }
         }
-    }
+    };
 
     // Function for generating a random address.
     function getRandomAddress() {
@@ -104,44 +104,41 @@
     // Unsplash search API, used it to get a random image with house as a query.
     async function makeImageRequest(html) {
         let response = await fetch(`https://api.unsplash.com/search/photos/?query=house&page=${ Math.round(Math.random()*1000) }&client_id=DEK9mR3xpfWkG3t3e2a7Cjegv_y5Pd0OQDcg-_G0j3U`);
-        let data = await response.json()
-        houseImage = data.results[0].urls.raw
+        let data = await response.json();
+        houseImage = data.results[0].urls.raw;
 
-        html.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${houseImage}")`
-        html.style.backgroundSize = "100% 250px"
+        html.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${houseImage}")`;
+        html.style.backgroundSize = "100% 250px";
     }
 
     // Document declarations.
     let mainNav = document.querySelector('#js-menu');
     let navBarToggle = document.querySelector('#js-navbar-toggle');
-    let searchButton = document.querySelector("#searchButton");
-
-    let htmlHeader = document.querySelectorAll(".header");
-    let htmlContent = document.querySelectorAll(".content");
 
     // Getting data from localStorage I stored on previous page.
     let json = localStorage.getItem("getData");
     let userData = JSON.parse(json);
-    console.log(userData)
+    console.log(userData);
 
 
     // Running an object loop through accommodation object.
     for (let data in accommodationData) {
-        let key = accommodationData[data]
-        let comparingPeople = (userData.getPeopleValue >= key.minPeople && userData.getPeopleValue <= key.maxPeople)
-        let comparingNights = (userData.getDateDifference >= key.minDay && userData.getDateDifference <= key.maxDay)
+      if (accommodationData.hasOwnProperty(data)) {
+        let key = accommodationData[data];
+        let comparingPeople = (userData.getPeopleValue >= key.minPeople && userData.getPeopleValue <= key.maxPeople);
+        let comparingNights = (userData.getDateDifference >= key.minDay && userData.getDateDifference <= key.maxDay);
 
         // Checks to see if the relevant requirements to display a single result have been met, shows results after comparing all objects with entered data.
         if (comparingPeople && comparingNights) {
 
             // Generate random address purely for aesthetics.
-            window.streetNumber = Math.round(Math.random() * 100)
+            window.streetNumber = Math.round(Math.random() * 100);
             window.streetName = ["Matuku Place", "Cuba Street", "Baldwin Street", "King Street", "Courtenay Place", "Hala Crescent"];
             window.display = [streetNumber, " ", streetName, ", ", userData.getRegionValue];
 
             // If not selectedAccommodation, create an empty global object.
             if (!window.selectedAccommodation) {
-                window.selectedAccommodation = []
+                window.selectedAccommodation = [];
             }
 
             // Append the data object for each of the results displayed after the check,
@@ -151,7 +148,7 @@
                 getType: key.name,
                 getCost: key.cost,
                 getMealPackage: key.mealPackage
-            })
+            });
 
             // Creating dynamic html for each result.
             document.querySelector("#results").innerHTML += `
@@ -164,14 +161,15 @@
                 </div>
 
             `
-
+          ;
         }
+      }
     }
 
 
     // Adds images to every box field
     let allBoxes = document.querySelectorAll(".box");
-    console.log(allBoxes)
+    console.log(allBoxes);
 
     // Getting each box (result) displayed.
     for (let i = 0; i < allBoxes.length; i++) {
@@ -181,13 +179,13 @@
         allBoxes[i].addEventListener('click', () => {
 
             let img = allBoxes[i].style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
-            window.selectedAccommodation[i].getImage = img
+            window.selectedAccommodation[i].getImage = img;
 
             // Sends the selectedAccommodation object that I created earlier on parallel to the box the user clicks on
-            string = JSON.stringify(window.selectedAccommodation[i])
+            string = JSON.stringify(window.selectedAccommodation[i]);
             localStorage.setItem("selectedAccommodation", string);
             window.location = 'accommodation.html';
-        })
+        });
     }
 
     // Navbar activator

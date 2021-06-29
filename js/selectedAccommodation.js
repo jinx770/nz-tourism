@@ -3,7 +3,6 @@
 // HTML Declarations.
     let mainNav = document.querySelector("#js-menu");
     let navBarToggle = document.querySelector("#js-navbar-toggle");
-    let searchButton = document.querySelector("#searchButton");
 
     let accommodationData = localStorage.getItem("selectedAccommodation");
     let selectedAcc = JSON.parse(accommodationData);
@@ -12,12 +11,12 @@
     let getData = JSON.parse(bookingData);
 
     let box = document.querySelector(".image-container");
-    box.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${selectedAcc.getImage}")`
-    box.style.backgroundSize = "100%"
+    box.style.backgroundImage = `linear-gradient(to bottom, transparent 0%, black 100%), url("${selectedAcc.getImage}")`;
+    box.style.backgroundSize = "100%";
 
     let i = 0;
     let mealBox = document.querySelectorAll(".meal");
-    let mealObject = selectedAcc.getMealPackage
+    let mealObject = selectedAcc.getMealPackage;
 
 
     document.querySelector(".container").innerHTML = `
@@ -46,29 +45,31 @@
 
         </ul>
 
-    `
+    `;
 
     for (let package in mealObject) {
-        mealBox[i].textContent = mealObject[package].name
+  		if (mealObject.hasOwnProperty(package)) {
+        mealBox[i].textContent = mealObject[package].name;
         i++;
+  		}
     }
 
     document.querySelector(".meal-container").addEventListener('click', () => {
         for (let i = 0; i < mealBox.length; i++) {
             if ($(mealBox[i]).hasClass("selected")) {
-                $(mealBox[i]).removeClass("selected")
-                $(mealBox[i]).addClass("meal")
+                $(mealBox[i]).removeClass("selected");
+                $(mealBox[i]).addClass("meal");
             }
         }
-    })
+    });
 
     for (let i = 0; i < mealBox.length; i++) {
         mealBox[i].addEventListener('click', () => {
             setTimeout(function () {
                 $(mealBox[i]).addClass("selected");
-                $(mealBox[i]).removeClass("meal")
-            }, 100)
-        })
+                $(mealBox[i]).removeClass("meal");
+            }, 100);
+        });
     }
 
     document.querySelector("#bookNow").onclick = function() {
@@ -77,7 +78,7 @@
               wnd.close();
               setTimeout(function() {
                   window.location = 'edit.html';
-              }, 1000)
+              }, 1000);
         }, 2000);
     };
 

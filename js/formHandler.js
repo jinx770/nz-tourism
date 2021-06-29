@@ -4,7 +4,6 @@
     let mainNav = document.querySelector('#js-menu');
     let navBarToggle = document.querySelector('#js-navbar-toggle');
     let searchButton = document.querySelector("#searchButton");
-    let formSubmit = document.querySelector("#form");
 
 // Function to update all dom values when called.
     function getInputs() {
@@ -36,8 +35,7 @@
 
 // Checks if the form is validated using checkValidity().
     function validateForm() {
-        let inputs = document.getElementsByTagName('input');
-        let formValid = document.forms["form"].checkValidity();
+        let formValid = document.forms.form.checkValidity();
         return formValid;
     }
 
@@ -46,17 +44,17 @@
         let json = JSON.stringify(userData);
         localStorage.setItem("getData", json);
         window.location = 'results.html';
-    };
+    }
 
 // Set the date minimum to the current day for form validation
     let today = new Date();
     let dd = today.getDate();
-    let mm = today.getMonth()+1
+    let mm = today.getMonth()+1;
     let yyyy = today.getFullYear();
     if (dd<10) {
-        dd='0'+dd
+        dd='0'+dd;
     } if(mm<10){
-        mm='0'+mm
+        mm='0'+mm;
     }
 
     today = yyyy+'-'+mm+'-'+dd;
@@ -79,7 +77,7 @@
                 getPeopleValue,
                 getDateDifference: getNumberOfDays(getStartDateValue, getEndDateValue),
                 getCopyValue,
-            }
+            };
 
             // Calls the function that proceeds to the next page,
             // passing the updated userData table using localstorage.
